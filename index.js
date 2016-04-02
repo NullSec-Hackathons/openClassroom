@@ -17,7 +17,7 @@ require('./signalling-server.js')(server,function(socket){
     if(!params.socketCustomEvent) {
       params.socketCustomEvent = 'No message'
     }
-    socket.on('hello',(msg)=>{
+    socket.on(params.socketCustomEvent,(msg)=>{
       console.log(msg);
       socket.broadcast.emit('world',msg);
     })

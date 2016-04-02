@@ -132,12 +132,12 @@
             };
 
             document.getElementById('input-text-chat').onkeyup = function(e) {
-                if (e.keyCode != 13) return;
+                if (e.keyCode != 13)
+                  return;
 
                 // removing trailing/leading whitespace
                 this.value = this.value.replace(/^\s+|\s+$/g, '');
                 if (!this.value.length) return;
-
                 connection.send(this.value);
                 appendDIV(this.value);
                 this.value = '';
@@ -217,6 +217,8 @@ connection.iceServers = iceServers;
 
             connection.videosContainer = document.getElementById('videos-container');
             connection.onstream = function(event) {
+              if(connection.userid === event.userid)
+              event.mediaElement.muted = true;//TODO:
                 connection.videosContainer.appendChild(event.mediaElement);
                 event.mediaElement.play();
                 setTimeout(function() {
@@ -257,6 +259,7 @@ connection.iceServers = iceServers;
                 connection.attachStreams.forEach(function(stream) {
                     stream.stop();
                 });
+                document.querySelector('video') = '';//TODO:sa
 
                 // don't display alert for moderator
                 if(connection.userid === event.userid) return;
