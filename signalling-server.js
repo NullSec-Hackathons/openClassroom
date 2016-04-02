@@ -1,7 +1,3 @@
-// Muaz Khan      - www.MuazKhan.com
-// MIT License    - www.WebRTC-Experiment.com/licence
-// Documentation  - github.com/muaz-khan/RTCMultiConnection
-
 module.exports = exports = function(app, socketCallback) {
     var listOfUsers = {};
     var shiftedModerationControls = {};
