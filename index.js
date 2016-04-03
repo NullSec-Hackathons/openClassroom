@@ -6,8 +6,11 @@ app.use('/js/',express.static(__dirname+'/js/'));
 app.use('/css/',express.static(__dirname+'/css/'));
 app.use('/font/',express.static(__dirname+'/font/'));
 app.get('/',(req,res)=>{
+  res.sendFile(__dirname+'/Start.html');
+});
+app.get('/light',(req,res)=>{
   res.sendFile(__dirname+'/player.html');
-})
+});
 server.listen(PORT,()=>{
   console.log(`listening on port:${PORT}`);
 });
