@@ -1,7 +1,7 @@
 {
-  "name": "openmooc",
+  "name": "openClassroom",
   "version": "1.0.0",
-  "description": "open-mooc server",
+  "description": "OpenClassroom server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
